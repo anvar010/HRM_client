@@ -1,27 +1,74 @@
-import React from 'react';
+import axios from 'axios';
+import React, { useState } from 'react';
 import Landing_Nav from '../landing/Landing_Nav';
-import './Login.css'; 
+import './Login.css';
 
-function LandingLogin () {
+function LandingLogin() {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+
+    const HOSTED_SERVER_URL = 'http://localhost:3000'; 
+
+    try {
+      const response = await axios.post(`${HOSTED_SERVER_URL}/login`, {
+        email,
+        password,
+      });
+
+      if (response.data.statusCode === 200) {
+        
+        console.log('Login successful');
+        alert('Login successful!');
+        // history.push('/add_user');
+        localStorage.setItem('accessToken', response.data.data);
+       
+        
+        
+      } else {
+        
+        console.error('Login failed:', response.data.message);
+        console.error('Login failed:', response.data.message);
+      }
+    } catch (error) {
+      console.error('Error during login:', error);
+    }
+  };
+
   return (
-    <body>
-      
-      <Landing_Nav/>
+    <div>
+      <Landing_Nav />
       <section className="container">
         <div className="login-container">
           <div className="circle circle-one"></div>
           <div className="form-container">
-            
-            {/* <img
-              src="https://raw.githubusercontent.com/hicodersofficial/glassmorphism-login-form/master/assets/illustration.png"
-              alt="illustration"
-              className="illustration"
-            /> */}
             <h1 className="opacity">LOGIN</h1>
-            <form>
-              <input type="text" placeholder="USERNAME" />
-              <input type="password" placeholder="PASSWORD" />
-              <button className="opacity">SUBMIT</button>
+            <form onSubmit={handleLogin}>
+              <input
+                type="text"
+                placeholder="EMAIL"
+                value={email}
+                onChange={handleEmailChange}
+              />
+              <input
+                type="password"
+                placeholder="PASSWORD"
+                value={password}
+                onChange={handlePasswordChange}
+              />
+              <button className="opacity" type="submit" onClick={handleLogin}>
+                SUBMIT
+              </button>
             </form>
             <div className="register-forget opacity">
               <a href="">REGISTER</a>
@@ -32,8 +79,8 @@ function LandingLogin () {
         </div>
         <div className="theme-btn-container"></div>
       </section>
-    </body>
+    </div>
   );
-};
+}
 
 export default LandingLogin;

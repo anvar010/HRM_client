@@ -7,7 +7,7 @@ import Landing_Nav from '../landing/Landing_Nav';
 function AddUser() {
   return (
     <>
-    <body>
+    {/* <body> */}
       
       <Landing_Nav/>
       <section className="container">
@@ -25,7 +25,7 @@ function AddUser() {
               <input type="text" placeholder="First Name" />
               <input type="text" placeholder="Last Name" />
               <input type="email" placeholder="EMAIL" />
-              <input type="password" placeholder="PASSWORD" />
+              <input type="password" placeholder="PASSWORD"/>
               <button className="opacity">SUBMIT</button>
             </form>
             
@@ -34,7 +34,7 @@ function AddUser() {
         </div>
         <div className="theme-btn-container"></div>
       </section>
-    </body>
+    {/* </body> */}
     </>
   );
 }
