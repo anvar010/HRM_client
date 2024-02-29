@@ -25,7 +25,7 @@ function AddUser() {
               <input type="text" placeholder="First Name" />
               <input type="text" placeholder="Last Name" />
               <input type="email" placeholder="EMAIL" />
-              <input type="password" placeholder="PASSWORD"/>
+              <input type="password" placeholder="PASSWORD" autoComplete="password"/>
               <button className="opacity">SUBMIT</button>
             </form>
             

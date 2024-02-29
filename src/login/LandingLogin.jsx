@@ -1,9 +1,15 @@
 import axios from 'axios';
 import React, { useState } from 'react';
+import { useNavigate } from "react-router-dom";
 import Landing_Nav from '../landing/Landing_Nav';
 import './Login.css';
 
+
+
 function LandingLogin() {
+  const navigate = useNavigate();
+
+
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
@@ -30,18 +36,25 @@ function LandingLogin() {
         
         console.log('Login successful');
         alert('Login successful!');
-        // history.push('/add_user');
+       
         localStorage.setItem('accessToken', response.data.data);
+
+        navigate("/add_user");
+        
+         
        
         
         
       } else {
+        alert('Login Failed!');
+        // console.error('Login failed:', response.data.message);
+        // console.error('Login failed:', response.data.message);
         
-        console.error('Login failed:', response.data.message);
-        console.error('Login failed:', response.data.message);
       }
     } catch (error) {
-      console.error('Error during login:', error);
+      console.log("Reached here")
+      console.error('Error during login:', error.response.data.message);
+      alert(error.response.data.message)
     }
   };
 
@@ -55,16 +68,19 @@ function LandingLogin() {
             <h1 className="opacity">LOGIN</h1>
             <form onSubmit={handleLogin}>
               <input
-                type="text"
+                type="email"
                 placeholder="EMAIL"
                 value={email}
                 onChange={handleEmailChange}
+                
               />
               <input
                 type="password"
                 placeholder="PASSWORD"
                 value={password}
                 onChange={handlePasswordChange}
+                autoComplete="password"
+                
               />
               <button className="opacity" type="submit" onClick={handleLogin}>
                 SUBMIT
