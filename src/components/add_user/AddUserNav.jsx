@@ -1,13 +1,13 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Display from '../display/Display';
-import './Navbar.css'; 
+// import Display from '../display/Display';
+import './User.css'; 
 
-function Landing_Nav() {
+function AddUserNav() {
   return (
     <div className='bg'>
 
-      {/* <Display/> */}
+      
       <nav>
         <ul className="nav-links">
         <li><Link to="/">Home</Link></li>
@@ -21,6 +21,8 @@ function Landing_Nav() {
           
         </ul>
       </nav>
+    
+      
       
       {/* <p className='text'>Web Development vs. Web Programming</p>
 <p className='text1'>Web development and web programming sound very similar and they are. But there’s one very important distinction. 
@@ -29,4 +31,4 @@ function Landing_Nav() {
   );
 };
 
-export default Landing_Nav;
+export default AddUserNav;

@@ -39,7 +39,7 @@ function LandingLogin() {
        
         localStorage.setItem('accessToken', response.data.data);
 
-        navigate("/add_user");
+        navigate("/admin");
         
          
        
@@ -59,8 +59,10 @@ function LandingLogin() {
   };
 
   return (
+    <>
+    
     <div>
-      <Landing_Nav />
+      
       <section className="container">
         <div className="login-container">
           <div className="circle circle-one"></div>
@@ -96,6 +98,7 @@ function LandingLogin() {
         <div className="theme-btn-container"></div>
       </section>
     </div>
+    </>
   );
 }
 

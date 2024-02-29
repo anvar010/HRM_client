@@ -1,15 +1,15 @@
 import React from 'react';
 import './User.css';
-import Landing_Nav from '../landing/Landing_Nav';
+// import Landing_Nav from '../landing/Landing_Nav';
 
 
 
-function AddUser() {
+function AddUserPage() {
   return (
     <>
-    {/* <body> */}
+   
       
-      <Landing_Nav/>
+      {/* <Landing_Nav/> */}
       <section className="container">
         <div className="login-container">
           <div className="circle circle-one"></div>
@@ -34,9 +34,9 @@ function AddUser() {
         </div>
         <div className="theme-btn-container"></div>
       </section>
-    {/* </body> */}
+   
     </>
   );
 }
 
-export default AddUser;
+export default AddUserPage;
