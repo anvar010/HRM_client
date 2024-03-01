@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import './Dashboard.css'
 
 export default function DashBoardPage() {
@@ -5,42 +6,45 @@ export default function DashBoardPage() {
         <div className='app-container'>
           <div className='img-nav'>
     
-            {/* Tile 1 */}
+            
             <div className='tile'>
-              <p spine>Lorem Ipsum</p>
+              <Link to={'/add_user'}>
               <div className='content'>
-                <h1>Example Text</h1>
-                <p>Lorem Ipsum</p>
-              </div>
-              <div className='img'></div>
+                <h1>ADD USER</h1>
+                
+              </div></Link>
+             
             </div>
+            
+            
     
             {/* Tile 2 */}
             <div className='tile'>
-              <p spine>Example 1</p>
+            <Link to={'/'}>
               <div className='content'>
-                <h1>Example Text</h1>
-                <p>Lorem Ipsum</p>
-              </div>
-              <div className='img'></div>
+                <h1>HOME</h1>
+                
+              </div></Link>
+              
+             
             </div>
     
             {/* Tile 3 */}
             <div className='tile'>
-              <p spine>Example 2</p>
+              
               <div className='content'>
-                <h1>Example Text</h1>
-                <p>Lorem Ipsum</p>
+                <h1>PROFILE</h1>
+              
               </div>
-              <div className='img'></div>
+              
             </div>
     
             {/* Tile 4 */}
             <div className='tile'>
-              <p spine>Example 3</p>
+              
               <div className='content'>
-                <h1>Example Text</h1>
-                <p>Lorem Ipsum</p>
+                <h1>LOGOUT</h1>
+                
               </div>
               <div className='img'></div>
             </div>

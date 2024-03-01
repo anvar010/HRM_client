@@ -21,6 +21,7 @@ function Landing() {
             <Route path="/login" exact element={<Login/>}/>
             <Route path="/admin" exact element={<Dashboard/>}/>
             <Route path="/add_user" exact element={<AddUser/>}/>
+            <Route path="/home" exact element = {<Landing_Page/>}/>
         </Routes>
         </>
        </Router> 

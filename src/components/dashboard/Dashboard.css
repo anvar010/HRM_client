@@ -5,6 +5,7 @@
   background-image: linear-gradient(-25deg, #A3A3A3, white);
 } */
 
+
 .app-container {
     background-image: url('../assets/bg.jpg');
     background-size: cover;
@@ -28,45 +29,50 @@
 }
 
 .tile {
-  height: 100%;
-  width: 80px;
-  min-width: 80px;
-  border-radius: 5em;
-  background-color: white;
+  height: 50%;
+  width: 680px;
+  /* min-width: 80px; */
+  border-radius: 2em;
+  background-color: rgb(109, 34, 34);
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
   transition: width 0.4s ease-in-out, border-radius 0.4s ease-in-out;
   cursor: pointer;
   display: flex;
   justify-content: center;
-  align-items: end;
+  align-items: center;
   overflow: hidden;
   position: relative;
+  
+    flex-direction: column; /* If you want content to stack vertically within each tile */
+    margin: 10px; 
+    background-image: url('../assets/tree-736885_1280.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+  
 }
 .tile:hover{
   width: 100%;
   border-radius: 3em;
+  padding-left: 10px;
 }
 
-.tile p[spine]{
-  display: block;
-  position: absolute;
-  z-index: auto;
-  font-size: 24px;
-  color: black;
-  font-family: 'Montserrat';
-  top: 5em;
-  transform: rotateZ(-90deg);
-  opacity: 1;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  transition: opacity 0.2s ease-in-out, transform 0.4s ease-in-out;
-  width: max-content;
+
+h1{
+  /* padding-right: 20px; */
+  text-align: center;
+  font-size: 18px;
+  width: 120px;
 }
 
 .tile:hover p[spine]{
   opacity: 0;
   transform: translateY(50px) rotateZ(-90deg);
 }
+
+/* .content1 {
+  padding-right: 25px;
+} */
+
 
 .tile .img{
   width: 60px;
@@ -91,8 +97,10 @@
 .tile .content{
   position: relative;
   z-index: 10;
-  color: white;
-  opacity: 0;
+  color: rgb(247, 238, 238);
+  padding-right: 60px;
+  
+  
   transform: translateX(50px);
   margin-bottom: 1em;
   font-family: 'Montserrat';
@@ -105,11 +113,11 @@
 
 
 /* SET IMGs*/
-.tile:nth-child(1) .img{
+/* .tile:nth-child(1) .img{
   background-image: url('../assets/bg.jpg');
 
-}
-.tile:nth-child(2) .img{
+} */
+/* .tile:nth-child(2) .img{
   background-image: url('../assets/bg.jpg');
 
 }
@@ -120,7 +128,7 @@
 .tile:nth-child(4) .img{
   background-image: url('../assets/bg.jpg');
 
-}
+} */
 
 
 

@@ -11,14 +11,14 @@ function DashBoardNav() {
       
       <nav>
         <ul className="nav-links">
-        <li><Link to="/">Home</Link></li>
+        <li><Link to="/home">Home</Link></li>
           <li><a href='#'>Profile</a></li>
           <li><a href='#'>Settings</a></li>
           <li><a href='#'>Contact Us</a></li>
           
           {/* <li>
             <Link to={'/login'}><button className="login-button">Login</button></Link></li> */}
-          <li><Link to={'/add_user'}><button className="join-button">Add User</button></Link></li>
+          {/* <li><Link to={'/add_user'}><button className="join-button">Add User</button></Link></li> */}
           
         </ul>
       </nav>

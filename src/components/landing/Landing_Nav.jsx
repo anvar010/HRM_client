@@ -16,7 +16,7 @@ function Landing_Nav() {
           
           <li>
             <Link to={'/login'}><button className="login-button">Login</button></Link></li>
-          <li><Link to={'/add_user'}><button className="join-button">Add User</button></Link></li>
+          {/* <li><Link to={'/add_user'}><button className="join-button">Add User</button></Link></li> */}
           
         </ul>
       </nav>
