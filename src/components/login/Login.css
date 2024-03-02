@@ -7,6 +7,9 @@
 * {
     box-sizing: border-box;
 }
+.error-message{
+color: red;
+}
 
 
 body {
@@ -40,7 +43,7 @@ h1 {
 }
 
 .login-container {
-    position: relative;
+    position: fixed;
     width: 400px;
     width: 22.2rem;
     padding-bottom: 1800px ;
