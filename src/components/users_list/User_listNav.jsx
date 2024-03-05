@@ -5,7 +5,7 @@ import './UserList.css'
 
 function AddUserNav() {
   return (
-    <div className='bg'>
+    <div >
 
       
       <nav>

@@ -27,8 +27,9 @@ const UserListPage = () => {
   console.log("data : ",data);
 
   return (
-    <div>
+    <div className='bg'>
       <h1>User List</h1>
+      {/* <div><h1>Total users : {data.length}</h1></div> */}
       <table>
         <thead>
           <tr>
@@ -57,6 +58,7 @@ const UserListPage = () => {
               <td>
                 <input type="password" name="password" value={data.password} readOnly={true} />
               </td>
+              
               <td>
                 <button onClick={() => handleEdit(data._id)}>Edit</button>
               </td>
@@ -69,6 +71,6 @@ const UserListPage = () => {
       </table>
     </div>
   );
-};
 
+};
 export default UserListPage;
