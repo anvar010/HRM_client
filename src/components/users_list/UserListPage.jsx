@@ -24,7 +24,7 @@ const UserListPage = () => {
 
     fetchData();
   }, []); // Empty dependency array to ensure useEffect runs only once
-  console.log("data : ",data);
+  console.log("data : ", data);
 
   return (
     <div className='bg'>
@@ -47,18 +47,18 @@ const UserListPage = () => {
             <tr key={data._id}>
               <td>{data._id}</td>
               <td>
-                <input type="text" name="first_name" value={data.first_name} readOnly={true} />
+                <div>{data.first_name}</div>
               </td>
               <td>
-                <input type="text" name="last_name" value={data.last_name} readOnly={true} />
+                <div>{data.last_name}</div>
               </td>
               <td>
-                <input type="email" name="email" value={data.email} readOnly={true} />
+                <div>{data.email}</div>
               </td>
               <td>
-                <input type="password" name="password" value={data.password} readOnly={true} />
+                <div>{data.password}</div>
               </td>
-              
+
               <td>
                 <button onClick={() => handleEdit(data._id)}>Edit</button>
               </td>

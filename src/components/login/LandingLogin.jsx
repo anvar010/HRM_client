@@ -11,7 +11,10 @@ function LandingLogin() {
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [emailError, setEmailError] = useState('');
+  const [passwordError, setPasswordError] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
+  
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -26,22 +29,25 @@ function LandingLogin() {
     e.preventDefault();
 
     setErrorMessage('');
+    setEmailError('')
+    setPasswordError('')
+
    
 
     if (!email ) {
-      setErrorMessage('Email is required');
+      setEmailError('Email is required');
       return;
     
     }
 
     if(!password) {
-      setErrorMessage('Password is required')
+      setPasswordError('Password is required')
     }
 
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/ ;
 
     if (!emailRegex.test(email)){
-      setErrorMessage('invalid email format');
+     setEmailError('invalid email format');
       return ;
     }
 
@@ -101,7 +107,7 @@ function LandingLogin() {
                 
                 
               />
-              {errorMessage && <p className="error-message">{errorMessage}</p>}
+              {emailError && <p className="error-message">{emailError}</p>}
               
               
               <input
@@ -110,8 +116,8 @@ function LandingLogin() {
                 value={password}
                 onChange={handlePasswordChange}
                 autoComplete="password"
-                
               />
+              {passwordError && <p className="error-message">{passwordError}</p>}
               <button className="opacity" type="submit" onClick={handleLogin}>
                 SUBMIT
               </button>
