@@ -1,29 +1,37 @@
 import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import './UserList.css';
 
 const UserListPage = () => {
   const [data, setData] = useState([]);
+ 
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const token = localStorage.getItem('token');
-        const response = await fetch('http://localhost:3000/users', {
-          method: 'GET',
+        const token = localStorage.getItem('accessToken'); console.log("token : ",token)
+        const response = await axios.get('http://localhost:3000/users', {
+          // method: 'GET',
           headers: {
             'authorization': `Bearer ${token}`
+            
           }
+          
+          
         });
+       
+        
 
-        const parsedData = await response.json();
+        const parsedData = await response.data;
         setData(parsedData.data);
       } catch (error) {
         console.error('Error fetching data:', error);
       }
     };
-
+  
     fetchData();
-  }, []); // Empty dependency array to ensure useEffect runs only once
+    
+  }, []); 
   console.log("data : ", data);
 
   return (
@@ -37,9 +45,9 @@ const UserListPage = () => {
             <th>First Name</th>
             <th>Last Name</th>
             <th>Email</th>
-            <th>Password</th>
-            <th>Edit</th>
-            <th>Save</th>
+            <th >Password</th>
+            <th>View</th>
+            {/* <th>Save</th> */}
           </tr>
         </thead>
         <tbody>
@@ -52,6 +60,7 @@ const UserListPage = () => {
               <td>
                 <div>{data.last_name}</div>
               </td>
+              
               <td>
                 <div>{data.email}</div>
               </td>
@@ -60,12 +69,16 @@ const UserListPage = () => {
               </td>
 
               <td>
-                <button onClick={() => handleEdit(data._id)}>Edit</button>
+                {/* <button onClick={() => handleEdit(data._id)}> */}
+                <button>
+                <img src="src\components\assets\eye.png" alt="view" />
+                </button>
               </td>
-              <td>
+              {/* <td>
                 <button onClick={() => handleSave(data._id)}>Save</button>
-              </td>
+              </td> */}
             </tr>
+            
           ))}
         </tbody>
       </table>

@@ -15,7 +15,7 @@ function LandingLogin() {
   const [passwordError, setPasswordError] = useState('');
   const [errorMessage, setErrorMessage] = useState('');
   
-
+  
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };

@@ -30,7 +30,7 @@
 
 .tile {
   height: 50%;
-  width: 680px;
+  /* width: 200px; */
   /* min-width: 80px; */
   border-radius: 2em;
   background-color: rgb(109, 34, 34);

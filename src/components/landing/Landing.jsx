@@ -23,7 +23,7 @@ function Landing() {
             <Route path="/admin" exact element={<Dashboard/>}/>
             <Route path="/add_user" exact element={<AddUser/>}/>
             <Route path="/home" exact element = {<Landing_Page/>}/>
-            <Route path="viewUser" exact element = {<UserList/>}/>
+            <Route path="/viewUser" exact element = {<UserList/>}/>
         </Routes>
         </>
        </Router> 
