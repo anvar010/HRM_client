@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState } from 'react';
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 import './Login.css';
 
@@ -124,7 +124,7 @@ function LandingLogin() {
             </form>
             <div className="register-forget opacity">
               <a href="">REGISTER</a>
-              <a href="">FORGOT PASSWORD</a>
+             <Link to={"/forgot-password"}> <a href="">FORGOT PASSWORD</a></Link>
             </div>
           </div>
           <div className="circle circle-two"></div>

@@ -6,6 +6,7 @@
 
 * {
     box-sizing: border-box;
+    
 }
 .error-message {
     color: red;
@@ -26,7 +27,7 @@
 
 
 body {
-    
+    overflow: hidden;
     box-sizing: border-box;
     font-family: "poppins";
     background: var(--background);
