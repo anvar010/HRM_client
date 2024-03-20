@@ -44,7 +44,7 @@ function AddUserPage() {
   };
 
   useEffect(() => {
-    // Attach the event listener when the component mounts
+    
     document.addEventListener('click', handleOutsideClick);
 
     

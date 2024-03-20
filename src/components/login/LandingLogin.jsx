@@ -124,7 +124,7 @@ function LandingLogin() {
             </form>
             <div className="register-forget opacity">
               <a href="">REGISTER</a>
-             <Link to={"/forgot-password"}> <a href="">FORGOT PASSWORD</a></Link>
+             <Link to={"/forgot-password"}> FORGOT PASSWORD</Link>
             </div>
           </div>
           <div className="circle circle-two"></div>
