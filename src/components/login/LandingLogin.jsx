@@ -73,9 +73,10 @@ function LandingLogin() {
       if (response.data.statusCode === 200) {
         console.log('Login successful');
         localStorage.setItem('accessToken', response.data.data);
-        setShowPopup(true); 
-        setPopupType('success');
-        setPopupMessage('Login Successful');
+        // setShowPopup(true); 
+        // setPopupType('success');
+        // setPopupMessage('Login Successful');
+        navigate('/admin')
       } else {
         setErrorMessage('Login Failed!');
         setShowPopup('true');
@@ -95,7 +96,7 @@ function LandingLogin() {
   const handlePopupOK = () => {
     setShowPopup(false);
     if (popupType === 'success' && loginResponse) {
-      localStorage.setItem('token', loginResponse.data.data);
+      // localStorage.setItem('token', loginResponse.data.data);
       
       setLoading(true); 
       
